@@ -1,0 +1,222 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Complete HTML-Only Form (All Fields & Accessibility)</title>
+  <!--
+    This is a single-file, HTML-only form that includes a wide variety of input types,
+    accessibility attributes, built-in validations, and semantic grouping.How to use:
+1. Save this file as `complete-html-form.html`.
+2. Open it in any modern browser.
+3. Replace the `action` attribute on the <form> element with your server endpoint to submit.
+   For testing locally, the form will validate without sending data because action="#".
+
+Notes:
+- No CSS or JavaScript is used (per request). The form relies on native browser UI and validation.
+- For custom styling or JS behavior (enhanced validation, live previews), I can add those on request.
+
+-->
+
+</head>
+<body>
+  <main>
+    <h1>Complete HTML Form (HTML-only)</h1>
+    <p>This form demonstrates many native HTML input types, accessibility features, and validation attributes.</p><form action="#" method="post" enctype="multipart/form-data" autocomplete="on">
+
+  <!-- Personal details -->
+  <fieldset>
+    <legend>Personal details</legend>
+
+    <label for="fullname">Full name <span aria-hidden="true">*</span></label>
+    <input id="fullname" name="fullname" type="text" required minlength="2" maxlength="100" placeholder="John Doe" autocomplete="name" aria-required="true">
+
+    <label for="nickname">Nickname</label>
+    <input id="nickname" name="nickname" type="text" placeholder="Sam (optional)" autocomplete="nickname">
+
+    <label for="email">Email address <span aria-hidden="true">*</span></label>
+    <input id="email" name="email" type="email" required placeholder="you@example.com" autocomplete="email">
+
+    <label for="phone">Phone number</label>
+    <input id="phone" name="phone" type="tel" pattern="^[0-9+\-() ]{7,20}$" placeholder="+91 98765 43210" inputmode="tel" title="Enter a valid phone number, digits and + - ( ) allowed">
+
+    <label for="password">Choose a password <span aria-hidden="true">*</span></label>
+    <input id="password" name="password" type="password" required minlength="8" maxlength="100" pattern="(?=^.{8,}$)(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).*" title="Minimum 8 characters, with upper and lower case letters and a number" autocomplete="new-password">
+
+  </fieldset>
+
+  <!-- Address -->
+  <fieldset>
+    <legend>Address</legend>
+
+    <label for="address1">Address line 1 <span aria-hidden="true">*</span></label>
+    <input id="address1" name="address1" type="text" required autocomplete="address-line1">
+
+    <label for="address2">Address line 2</label>
+    <input id="address2" name="address2" type="text" autocomplete="address-line2">
+
+    <label for="city">City <span aria-hidden="true">*</span></label>
+    <input id="city" name="city" type="text" required autocomplete="address-level2">
+
+    <label for="state">State / Province</label>
+    <input id="state" name="state" type="text" autocomplete="address-level1">
+
+    <label for="postcode">Postal / ZIP code</label>
+    <input id="postcode" name="postcode" type="text" pattern="[A-Za-z0-9\- ]{3,10}" inputmode="numeric" title="Enter a valid postal code" autocomplete="postal-code">
+
+    <label for="country">Country</label>
+    <select id="country" name="country" autocomplete="country">
+      <option value="">— Select country —</option>
+      <optgroup label="Popular">
+        <option value="IN">India</option>
+        <option value="US">United States</option>
+        <option value="GB">United Kingdom</option>
+        <option value="CA">Canada</option>
+      </optgroup>
+      <optgroup label="Other">
+        <option value="AU">Australia</option>
+        <option value="DE">Germany</option>
+        <option value="FR">France</option>
+      </optgroup>
+    </select>
+
+  </fieldset>
+
+  <!-- Demographics and preferences -->
+  <fieldset>
+    <legend>Profile & preferences</legend>
+
+    <label>Gender</label>
+    <div role="radiogroup" aria-labelledby="gender-label">
+      <input type="radio" id="gender-m" name="gender" value="male">
+      <label for="gender-m">Male</label>
+
+      <input type="radio" id="gender-f" name="gender" value="female">
+      <label for="gender-f">Female</label>
+
+      <input type="radio" id="gender-o" name="gender" value="other">
+      <label for="gender-o">Other / Prefer not to say</label>
+    </div>
+
+    <label for="birthdate">Date of birth</label>
+    <input id="birthdate" name="birthdate" type="date" max="2025-09-25" aria-describedby="birthnote">
+    <small id="birthnote">Use the browser date picker. Max date set to today.</small>
+
+    <label for="age">Age</label>
+    <input id="age" name="age" type="number" min="0" max="150" step="1">
+
+    <label for="color">Favorite color (native color picker)</label>
+    <input id="color" name="color" type="color" value="#000000" aria-label="Favorite color">
+
+    <label for="range">Comfortable temperature (°C)</label>
+    <input id="range" name="temperature" type="range" min="10" max="40" step="1">
+
+    <label for="time">Best contact time</label>
+    <input id="time" name="contact_time" type="time">
+
+  </fieldset>
+
+  <!-- Skills and multi-select -->
+  <fieldset>
+    <legend>Skills & education</legend>
+
+    <label for="education">Highest education</label>
+    <select id="education" name="education">
+      <option value="highschool">High School</option>
+      <option value="bachelor">Bachelor's</option>
+      <option value="master">Master's</option>
+      <option value="phd">PhD</option>
+    </select>
+
+    <label for="skills">Select skills (use Ctrl/Cmd to multi-select)</label>
+    <select id="skills" name="skills" multiple size="6" aria-describedby="skills-help">
+      <option value="python">Python</option>
+      <option value="c">C / C++</option>
+      <option value="js">JavaScript</option>
+      <option value="ml">Machine Learning</option>
+      <option value="web">Web Development</option>
+      <option value="db">Databases</option>
+    </select>
+    <small id="skills-help">Hold Ctrl (Windows) or Cmd (Mac) to select more than one.</small>
+
+    <label for="bio">Short bio</label>
+    <textarea id="bio" name="bio" rows="5" maxlength="1000" placeholder="Tell us a little about yourself..."></textarea>
+
+  </fieldset>
+
+  <!-- Files & attachments -->
+  <fieldset>
+    <legend>Attachments</legend>
+
+    <label for="resume">Upload resume (PDF recommended)</label>
+    <input id="resume" name="resume" type="file" accept="application/pdf,.pdf" aria-describedby="resume-help">
+    <small id="resume-help">Max file size depends on your server. Browser does not enforce size limits.</small>
+
+    <label for="photos">Upload photos (multiple allowed)</label>
+    <input id="photos" name="photos" type="file" accept="image/*" multiple>
+
+  </fieldset>
+
+  <!-- Website / social -->
+  <fieldset>
+    <legend>Online presence</legend>
+
+    <label for="website">Personal website</label>
+    <input id="website" name="website" type="url" placeholder="https://example.com" autocomplete="url">
+
+    <label for="github">GitHub username</label>
+    <input id="github" name="github" type="text" placeholder="your-username" autocomplete="username" pattern="[A-Za-z0-9\-_.]{1,39}" title="GitHub username format">
+
+    <label for="linkedin">LinkedIn profile</label>
+    <input id="linkedin" name="linkedin" type="url" placeholder="https://www.linkedin.com/in/yourname">
+
+  </fieldset>
+
+  <!-- Consent and opt-ins -->
+  <fieldset>
+    <legend>Consent</legend>
+
+    <label for="newsletter">
+      <input id="newsletter" name="newsletter" type="checkbox" value="yes">
+      Subscribe to newsletter
+    </label>
+
+    <label for="terms">
+      <input id="terms" name="terms" type="checkbox" required aria-required="true">
+      I agree to the <a href="#terms">terms and conditions</a>. <span aria-hidden="true">*</span>
+    </label>
+
+  </fieldset>
+
+  <!-- Hidden and extra fields (server-side use) -->
+  <input type="hidden" name="form_version" value="2025-09-25-v1">
+
+  <!-- Search / datalist example -->
+  <label for="preferred-contact">Preferred contact method</label>
+  <input list="contact-methods" id="preferred-contact" name="preferred_contact" placeholder="Choose or type...">
+  <datalist id="contact-methods">
+    <option value="Email">
+    <option value="Phone">
+    <option value="WhatsApp">
+    <option value="Telegram">
+  </datalist>
+
+  <!-- Form controls -->
+  <div>
+    <button type="submit">Submit form</button>
+    <button type="reset">Reset</button>
+  </div>
+
+</form>
+
+<hr>
+<section aria-hidden="true">
+  <h2>Developer notes</h2>
+  <p>This file intentionally contains only HTML. Native browser validation (required, pattern, type) will run on submit.</p>
+  <p>To add styling, include a &lt;style&gt; block in the &lt;head&gt; or link a CSS file. To enhance behavior or client-side validation messages, add JavaScript.</p>
+</section>
+
+  </main>
+</body>
+</html>
