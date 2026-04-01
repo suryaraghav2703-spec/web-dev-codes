@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FONTS AND COLOR IN CSS</title>
+    <style>
+        h1{
+          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        p{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-style: italic;
+            font-weight: 500;
+            text-decoration: underline;  
+            font-size: 20px;
+            line-height: 4; /* lines ke beech ki spacing */
+            
+        }
+
+        h2{
+            text-align: center;
+            text-transform: uppercase; /* it makes complete sentance in upper and lower case */
+            text-decoration: underline;
+            text-decoration-color: blue; /* color the underline (its like a highlighter)*/
+            text-decoration-style: solid; /*changes the style of underlining*/
+            text-decoration-thickness:7px; /*mota karne ke liye underline ko */
+            text-indent: 45px;  
+            text-overflow: ellipsis;
+                }
+
+        .Lorem{
+            border: 2px solid red;
+            width: 145px;
+            word-break: break-all;
+            text-align: center;
+            /* text-overflow: ellipsis;
+            overflow: hidden; */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>FONTS</h1>
+        <h2>about me</h2>
+        <p>this is a font mast hai na bruhh </p>
+        <p class="Lorem">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur doloribus iusto eligendi ullam eius nesciunt neque laboriosam unde error! Odio quis esse cupiditate, architecto reprehenderit molestiae deleniti non hic ab necessitatibus. Laborum in rem doloremque nisi unde asperiores laboriosam maiores, dignissimos, praesentium soluta sequi porro.</p>
+    </div>
+</body>
+</html>
