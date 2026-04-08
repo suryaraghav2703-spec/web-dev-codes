@@ -1,0 +1,54 @@
+<!-- important nahi hai , will use flexbox  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS FLOAT & CLEAR</title>
+    <style>
+        .cards{
+            border: 2px solid black;
+            display: flow-root;
+            /* flow-root is container ke within elements ko fix kar sakte hai */
+        }
+        img{
+            float: left;
+        }
+        .card{
+            border: 2px solid red;
+        }
+        .card:nth-child(3){
+            background-color: aqua;
+            clear: left;
+            /* clear se ye hota hai ki selected elements ke aas pass koi bhi element nahi dikhega */
+        }
+    </style>
+</head>
+<body>
+    <div class="cards">
+        <img src="https://images.unsplash.com/photo-1526779259212-939e64788e3c?q=80&w=1748&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" width="230">
+        <div class="card">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae odit molestias magnam
+                 nostrum nihil sit voluptates perferendis culpa distinctio in saepe nemo praesentium 
+                 molestiae ducimus, amet fugit tempora impedit quam? Voluptatum eaque neque officia!</p>
+        </div>
+
+        <div class="card">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit cupiditate 
+            aut non reprehenderit, sit debitis vel facere maiores mollitia possimus eos ea officia 
+            voluptatum porro quae id dolorum, ratione laudantium consequuntur ullam quisquam sapiente
+             perspiciatis dicta. Libero provident magni aperiam accusantium. Optio, aliquid doloremque! 
+             Delectus velit veritatis, quibusdam animi sint atque quo incidunt itaque ratione tenetur ex 
+             eaque eos perspicunt, et nobis atque velit eaque voluptatum facilis magnam 
+             ea libero odit autem molestiae? Veritatis dolorem unde magnam quam. Officia iusto fugit 
+             consectetur minus animi a iste necessitatibus placeat expedita vel dignissimos cumque
+              veniam unde nostrum corrupti evee
+                   debitis neque quas hic veniam aliquam, atque ratione est voluptatum deserunt. 
+                   Doloribus sint officia libero neque incidunt consequuntur tempora, unde optio
+                    reprehenderit?</div>
+
+        <div class="card">card 3</div>
+    </div>
+</body>
+</html>
