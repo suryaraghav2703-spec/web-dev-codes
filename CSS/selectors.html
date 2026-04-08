@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Selectors Explained</title>
+
+  <style>
+    /* ===============================
+       1️⃣ BASIC SELECTORS
+       =============================== */
+
+    /* Element Selector - selects all <p> tags */
+    p {
+      color: blue;
+    }
+
+    /* ID Selector - uses '#' and is unique per page */
+    #unique {
+      color: red;
+      font-weight: bold;
+    }
+
+    /* Class Selector - uses '.' and can be used multiple times */
+    .highlight {
+      background-color: yellow;
+    }
+
+    /* Universal Selector - applies to ALL elements */
+    * {
+      font-family: Arial, sans-serif;
+    }
+
+    /* Grouping Selector - applies same style to multiple elements */
+    h1, h2, h3 {
+      color: darkgreen;
+    }
+
+
+    /* ===============================
+       2️⃣ COMBINATOR SELECTORS
+       =============================== */
+
+    /* Descendant Selector - selects <span> inside <div> */
+    div span {
+      color: purple;
+    }
+
+    /* Child Selector - selects ONLY direct children */
+    div > p {
+      color: darkorange;
+    }
+
+    /* Adjacent Sibling Selector - selects the next element after another */
+    h2 + p {
+      background-color: lightgray;
+    }
+
+    /* General Sibling Selector - selects all <p> after <h3> */
+    h3 ~ p {
+      font-style: italic;
+    }
+
+
+    /* ===============================
+       3️⃣ ATTRIBUTE SELECTORS
+       =============================== */
+
+    /* Has specific attribute */
+    [title] {
+      border-bottom: 2px dotted gray;
+    }
+
+    /* Attribute = specific value */
+    [title="hello"] {
+      color: crimson;
+    }
+
+    /* Attribute starts with value */
+    [title^="sta"] {
+      background-color: lightblue;
+    }
+
+    /* Attribute ends with value */
+    [title$="end"] {
+      background-color: lightgreen;
+    }
+
+    /* Attribute contains value */
+    [title*="mid"] {
+      background-color: pink;
+    }
+
+
+    /* ===============================
+       4️⃣ PSEUDO-CLASSES
+       =============================== */
+
+    /* Hover - when mouse is over the element */
+    a:hover {
+      color: orange;
+    }
+
+    /* nth-child - selects every 2nd <li> */
+    li:nth-child(2n) {
+      color: darkviolet;
+    }
+
+    /* first-child and last-child */
+    li:first-child {
+      font-weight: bold;
+    }
+    li:last-child {
+      text-decoration: underline;
+    }
+
+    /* Focus - when input is active */
+    input:focus {
+      border: 2px solid blue;
+      outline: none;
+    }
+
+    /* not() - exclude specific elements */
+    p:not(.highlight) {
+      font-size: 16px;
+    }
+
+
+    /* ===============================
+       5️⃣ PSEUDO-ELEMENTS
+       =============================== */
+
+    /* ::before - inserts content before element */
+    h1::before {
+      content: "⭐ ";
+    }
+
+    /* ::after - inserts content after element */
+    h1::after {
+      content: "⭐";
+    }
+
+    /* ::first-letter - style first letter */
+    p::first-letter {
+      font-size: 22px;
+      color: darkred;
+    }
+
+    /* ::selection - when user selects text */
+    ::selection {
+      background: black;
+      color: white;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>CSS Selectors Demonstration</h1>
+
+  <h2>Basic Selectors</h2>
+  <p>This is a normal paragraph (element selector).</p>
+  <p id="unique">This has an ID selector (#unique).</p>
+  <p class="highlight">This has a class selector (.highlight).</p>
+
+  <h2>Combinator Selectors</h2>
+  <div>
+    <p>This is a child paragraph (div > p).</p>
+    <span>This span is inside a div (div span).</span>
+  </div>
+  <p>This paragraph comes right after h2 (h2 + p).</p>
+  <h3>Heading 3</h3>
+  <p>This is after h3 (h3 ~ p).</p>
+  <p>Another paragraph after h3 (h3 ~ p).</p>
+
+  <h2>Attribute Selectors</h2>
+  <p title="hello">This has title="hello".</p>
+  <p title="start123">This has title starting with "sta".</p>
+  <p title="middleword">This has title containing "mid".</p>
+  <p title="theend">This has title ending with "end".</p>
+
+  <h2>Pseudo-Classes</h2>
+  <a href="#">Hover over me (a:hover)</a>
+  <ul>
+    <li>First item</li>
+    <li>Second item</li>
+    <li>Third item</li>
+    <li>Fourth item</li>
+  </ul>
+
+  <input type="text" placeholder="Click to focus">
+
+  <h2>Pseudo-Elements</h2>
+  <p>This paragraph demonstrates pseudo-elements like ::first-letter and ::selection.</p>
+</body>
+</html>
