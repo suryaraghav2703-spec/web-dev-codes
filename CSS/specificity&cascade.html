@@ -1,0 +1,49 @@
+<!-- specificity is value which tells konsa selector specific hai ya importnt hai -->
+<!-- order to specificity is  -->
+
+<!-- inline style > id selector > class or attribute selector > element selector > universal selector. -->
+<!-- element ki specificity = 1 , class ki specificity = 10, pseudo class ki = 10 , href ho to uski bhi = 10 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* the specificity of this selector is 1 */
+        h1{
+            color:aqua;
+        }
+         /* the specificity of this selector is 10 */
+        .cpurple{
+            color: purple;
+        }
+         /* the specificity of this selector is 10 */
+        .cred{
+            color: red;
+        }
+         /* the specificity of this selector is 10 */
+        .yellow{
+            color: yellow;  /*jo sabse last mai ata hai vo aaply ho jata hai*/
+        }
+         /* this is an example of attribute selector. the specificity of this selector is 10 */
+          [data-x=a] {
+            color: maroon;
+          }  
+        /* the specifictiy of this selector is 1 + 10 = 11 */
+          /* h1.yellow{
+            color: green;    /* now this selector has 2 special so it will become prioprity.
+          } */
+
+           /* question:-  */
+           /* a.harryclass.rohan-class[href]:hover{color: blueviolet;} */
+           /* specificity of upper question is 1 + 10 + 10 + 10 + 10 =41 | :hover is pseudo class */
+    </style>
+</head>
+<body>
+    <div>
+        <h1 class="yellow cred cpurple">CSS specificity</h1>
+    </div>
+</body>
+</html>
