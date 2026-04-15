@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS OVERFLOW PROPERTY</title>
+    <style>
+        .box{
+            width: 10vw;
+            height: 10vh;
+            border: 2px solid black;
+            /* overflow: scroll; */
+            
+            overflow: auto;
+             /* issey hoga ye ki if zarurat hui tabhi scoll baar dikhega verna nahi*/
+
+            white-space: nowrap; 
+            /*issey horizontally space legi or vertically text neeceh nahi jaayega*/
+
+            text-overflow: ellipsis; 
+             /*isey text ke baad ... show hoga*/
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box"> i love to write Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        Rem cum consequatur, officiis, minus fuga quisquam 
+        recusandae exercitationem hic quibusdam a ut provident, molestiae nobis!</div>
+</body>
+</html>
