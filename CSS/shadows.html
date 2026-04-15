@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS SHADOWS & OUTLINE</title>
+    <style>
+.box{
+    border: 2px solid black;
+    padding: 34px;
+    box-shadow: 5px 15px 5px #888888;
+}
+.text-element{
+    text-shadow: 2px 2px 4px #ed1717;
+    border: 2px solid green;
+      outline: 2px solid black;           /* border is inside outline */
+      /* outline-offset: 17px; */
+      /* border-radius: 8px;  */            /* will make it  curvy*/
+ }
+    </style>
+</head>
+<body>
+    <div class="box"> i am a box</div>
+    <p class="text-element">Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus voluptas 
+        autem vel quod mollitia dolore,
+         minus vitae nisi fugiat odio consequatur esse
+         officiis repudiandae
+         impedit aliquid nobis expedita, quam, recusandae nostrum. Placeat.
+    </p>
+</body>
+</html>
+
+<!-- box-shadow : h-offset v-offset blur spread color inset;
+ h-offset and v-offset:- determines the shadow's horizontal and vertical position.
+ blur:- the larger the value, the blurrier the shadow.
+ spread:- expands the shadow color.
+ color:- defines shadow color.
+ inset:- makes the shadow inner. -->
+
+ <!-- outline : width style color;
+  width :- sets the outline width.
+  style:- determines the style of the outline such as solid, dotted, or dashed.
+  color:- sets the outline color. -->
+
+  <!-- difference between border and outline
+   While both can visually appear similar, outlines differ from borders in a few ways:
+1. Position: Outlines don't take up space; they're drawn around the element, outside of any border.
+2. Offset: Using the outline-offset property, you can set the space between an outline and the edge or border of an element.
+3. Width: Borders can have varying widths on different sides, outlines have a uniform width.
+4. Rounded Corners: Borders can have rounded corners using border-radius, while outlines generally cannot. -->
