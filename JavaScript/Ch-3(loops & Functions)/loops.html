@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loops in javascript</title>
+</head>
+
+<body>
+    <h2>Tutorial on loops</h2>
+    <h2>what is loops</h2>
+    <p>Loops are a fundamental concept in programming that allow you to execute a block of code repeatedly,
+        based on a condition. In JavaScript, there are several types of loops, including for loops, while loops,
+        and do-while loops.</p>
+
+    <h2>Examples of loops</h2>
+    <p>Here are some examples of how loops work in JavaScript:</p>
+    <ul>
+        <li><strong>For Loop:</strong> A for loop is used when you know how many times you want to iterate.</li>
+        <li><strong>While Loop:</strong> A while loop is used when you want to continue looping until a certain
+            condition is met.</li>
+        <li><strong>Do-While Loop:</strong> A do-while loop is similar to a while loop, but it guarantees
+            that the code block will be executed at least once.</li>
+    </ul>
+
+    <h2>Types of loops in JavaScript</h2>
+    <ul>
+        <li><strong>For Loop:</strong> Used for iterating a specific number of times.</li>
+        <li><strong>Foreach Loop:</strong> Used for iterating over arrays or collections.</li>
+        <li><strong>Map Loop:</strong> Used for applying a function to each element in an array and returning a new array.</li>
+        <li><strong>Filter Loop:</strong> Used for creating a new array with all elements that pass the test implemented
+            by the provided function.</li>
+        <li><strong>Reduce Loop:</strong> Used for reducing an array to a single value by applying a function to each
+            element.</li>
+        <li><strong>While Loop:</strong> Continues until a condition is false.</li>
+        <li><strong>Do-While Loop:</strong> Executes at least once before checking the condition.</li>
+    </ul>
+
+    <h2>Explaining each types</h2>
+    <ul>
+        <li><strong>For Loop:</strong> A for loop is used when you know how many times you want to iterate. It consists
+            of three parts: initialization, condition, and increment/decrement. For example:
+            <pre><code>for (let i = 0; i &lt; 5; i++) {
+    console.log(i);
+}</code></pre>
+        </li>
+        <li><strong>Foreach Loop:</strong> The foreach loop is used for iterating over arrays or collections. It
+            simplifies the process of looping through elements. For example:
+            <pre><code>const array = [1, 2, 3];
+array.forEach((element) =&gt; {
+    console.log(element);
+});</code></pre>
+        </li>
+        <li><strong>Map Loop:</strong> The map loop is used for applying a function to each element in an array and
+            returning a new array. For example:
+            <pre><code>const numbers = [1, 2, 3];
+const doubled = numbers.map((num) =&gt; num * 2);
+console.log(doubled); // [2, 4, 6]</code></pre>
+        </li>
+        <li><strong>Filter Loop:</strong> The filter loop is used for creating a new array with all elements that pass
+            the test implemented by the provided function. For example:
+            <pre><code>const numbers = [1, 2, 3, 4, 5];
+const evens = numbers.filter((num) =&gt; num % 2 === 0);
+console.log(evens); // [2, 4]</code></pre>
+        </li>
+        <li><strong>Reduce Loop:</strong> The reduce loop is used for reducing an array to a single value by applying a
+            function to each element. For example:
+            <pre><code>const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((acc, num) =&gt; acc + num, 0);
+console.log(sum); // 15</code></pre>
+        </li>
+        <li><strong>While Loop:</strong> A while loop continues until a specified condition is false. For example:
+            <pre><code>let i = 0;
+while (i &lt; 5) {
+    console.log(i);
+    i++;
+}</code></pre>
+        </li>
+        <li><strong>Do-While Loop:</strong> A do-while loop executes the code block at least once before checking the
+            condition. For example:
+            <pre><code>let i = 0;
+do {
+    console.log(i);
+    i++;
+} while (i &lt; 5);</code></pre>
+        </li>
+    </ul>
+
+</body>
+
+</html>
