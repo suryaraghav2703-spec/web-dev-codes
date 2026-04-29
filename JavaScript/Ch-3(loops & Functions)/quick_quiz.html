@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quick quiz --- 2</title>
+</head>
+<body>
+    <h2>q.1] write a sample for loop of your choice</h2>
+    <script>
+        for(let i = 0; i < 5; i++){
+            console.log(i);
+        }
+    </script>
+
+    <h2>q.2] write a sample program demonstrating for-in loop</h2>
+    <script>
+        const obj = { a: 1, b: 2, c: 3};
+        for(const key in obj){
+            const element = obj[key];
+            console.log(element);
+        }
+    </script>
+
+    <h2>q.3] write a sample of program demonstrating for-of loop</h2>
+    <script>
+        const str = "surya";
+        for(const char of str){
+            console.log(char);
+        }
+    </script>
+
+    <h2>q.4] write a sample program demonstrating forEach loop</h2>
+    <script>
+        const arr = [1, 2, 3, 4, 5];
+        arr.forEach((element) => {
+            console.log(element);
+        });
+    </script>
+
+     <h2>q.5] write a sample program demonstrating map loop</h2>
+     <script>
+        const numbers = [1, 2, 3, 4, 5];
+        const squared = numbers.map((num) => num * num);
+        console.log(squared);
+     </script>
+
+     <h2>q.6] write a sample program demonstrating filter loop</h2>
+     <script>
+        const nums = [1, 2, 3, 4, 5];
+        const evenNumbers = nums.filter((num) => num % 2 === 0);
+        console.log(evenNumbers);
+     </script>
+
+     <h2>q.7] write a sample program demonstrating while loop</h2>
+     <script>
+        let j = 0;
+        while(j<5){
+            console.log(j);
+            j++;
+        }
+     </script>
+
+     <h2>q.8] write a sample program demonstrating do-while loop</h2>
+     <script>
+        let k = 0;
+        do {
+            console.log(k);
+            k++;
+        } while (k < 5);
+     </script>
+     
+</body>
+</html>
