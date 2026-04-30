@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice set 4</title>
+</head>
+<body>
+    <h2>Q.1] What will be the following print in javascript? console.log("arr\"".length")</h2>
+    <script>
+        console.log("arr\"".length);  // it will print 4 because the string contains 4 characters: 'a', 'r', 'r', '"', and the closing quote
+    </script>
+
+    <h2>Q.2] explore the include , startswith & endswith functions of a string </h2>
+    <script>
+        let str = "Hello, world!";
+        console.log(str.includes("world"));  // true
+        console.log(str.startsWith("Hello")); // true
+        console.log(str.endsWith("!"));       // true
+    </script>
+
+    <h2>Q.3] write a program to convert a given string to lowercase</h2>
+    <script>
+        let str1 = "HELLO, WORLD";
+        console.log(str1.toLowerCase());
+    </script>
+
+    <h2>Q.4] extract the amount out of the following string "please give Rs. 100"</h2>
+    <script>
+        let str2 = "please give Rs. 100";
+        let amount = str2.match(/Rs\.\s*(\d+)/);
+        console.log(amount[1]);
+    </script>
+
+    <h2>Q.5] try to change 4th character of a given string. "Were you able to do it?" </h2>
+    <script>
+    let str3 = "Were you able to do it?";
+    str3 = str3.substring(0, 3) + "W" + str3.substring(4);
+    console.log(str3);
+    </script>
+</body>
+</html>
