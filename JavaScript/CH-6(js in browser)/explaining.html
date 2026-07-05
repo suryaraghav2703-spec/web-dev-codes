@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Basics Demo</title>
+</head>
+<body>
+
+<h2>Open Console (F12) to see output</h2>
+
+<button onclick="showAlert()">Alert</button>
+<button onclick="showPrompt()">Prompt</button>
+<button onclick="showConfirm()">Confirm</button>
+
+<script>
+    // ==============================
+    // 1. SCRIPT TAG
+    // ==============================
+    // <script> is used to write JavaScript inside HTML.
+    // It can be inside <head> or <body>.
+
+    console.log("Script Loaded Successfully!");
+
+    // ==============================
+    // 2. CONSOLE OBJECT METHODS
+    // ==============================
+
+    // log() → print normal message
+    console.log("This is a normal log");
+
+    // warn() → warning message
+    console.warn("This is a warning");
+
+    // error() → error message
+    console.error("This is an error");
+
+    // info() → informational message
+    console.info("This is info");
+
+    // table() → display data in table format
+    const student = [
+        {name: "Surya", marks: 90},
+        {name: "Rahul", marks: 85}
+    ];
+    console.table(student);
+
+    // assert() → check condition
+    console.assert(5 > 10, "Assertion failed: 5 is not greater than 10");
+
+    // clear() → clears console
+    // (uncomment to test)
+    // console.clear();
+
+    // ==============================
+    // 3. INTERACTION METHODS
+    // ==============================
+
+    // alert → shows message popup
+    function showAlert() {
+        alert("Hello! This is an alert box");
+    }
+
+    // prompt → takes user input
+    function showPrompt() {
+        let input = prompt("Enter your name:", "Guest"); // default value = Guest
+        console.log("User entered:", input);
+    }
+
+    // confirm → yes/no box
+    function showConfirm() {
+        let result = confirm("Do you want to continue?");
+        console.log("User choice:", result); // true or false
+    }
+
+    // ==============================
+    // 4. WINDOW OBJECT (BOM)
+    // ==============================
+
+    // window is the global object in browser
+    console.log(window);
+
+    // some window methods
+    console.log("Current URL:", window.location.href);
+
+    // ==============================
+    // 5. DOM (Document Object Model)
+    // ==============================
+
+    // DOM is used to access HTML elements
+    const heading = document.querySelector("h2");
+    heading.style.color = "blue";
+    heading.innerText = "DOM Modified Text!";
+
+</script>
+
+</body>
+</html>
