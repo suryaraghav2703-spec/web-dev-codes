@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice set 5</title>
+</head>
+
+<body>
+    <h2>q.1]create an array of numbers and take input from the user to add numbers to
+        this array.
+    </h2>
+    <script>
+        let array = [];
+        let count = Number(prompt("How many numbers do you want to add to the array?"));
+        for (let i = 0; i < count; i++) {
+            let num = Number(prompt("Enter a number"));
+            array.push(num);
+        }
+        console.log("Array:", array);
+    </script>
+
+    <h2>q.2] keep adding numbers to the array in q.1] until 0 is added to the array.</h2>
+    <script>
+        let arr = [];
+        let num;
+        do {
+            num = Number(prompt("Enter a number (0 to stop):"));
+            if (num !== 0) {
+                arr.push(num);
+            }
+        } while (num !== 0);
+        console.log("Array:", arr);
+    </script>
+
+    <h2>q.3] filter for numbers divisible by 10 from a given array.</h2>
+    <script>
+        let a = [10, 45, 50, 60];
+        let filtered = a.filteredNumbers = a.filter(num => num % 10 === 0);
+        console.log("Numbers divisible by 10:", filtered);
+    </script>
+
+    <h2>q.4] create an array of square of given array.</h2>
+    <script>
+        let ar = [2, 3, 4, 5, 12];
+        let square = ar.map(num => num * num);
+        console.log("square of given array:", square);
+    </script>
+
+    <h2>q.5]Use reduce to calculate factorial of a given
+        number from an array of first n natural.
+        numbers n being the number whose factorial needs
+        to be calculated</h2>
+    <script>
+        let n = Number(prompt("Enter a number:"));
+        let factorial = Array.from({ length: n }, (_, i) => i + 1).reduce((acc, curr) => acc * curr, 1);
+        console.log("Factorial of", n, "is", factorial);
+    </script>
+
+</body>
+
+</html>
