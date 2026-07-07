@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Learning Demo</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        .box { border: 2px solid black; padding: 10px; margin: 10px 0; }
+        .highlight { color: red; font-weight: bold; }
+        table, td { border: 1px solid black; border-collapse: collapse; padding: 5px; }
+    </style>
+</head>
+<body>
+
+    <h1 id="main-title">DOM Demo</h1>
+
+    <!-- Comment Node Example -->
+    <!-- This is a comment node -->
+
+    <div class="box" id="parentBox">
+        Text Node Example
+        <p class="child">Child 1</p>
+        <p class="child">Child 2</p>
+        <span name="special">Child 3</span>
+    </div>
+
+    <button onclick="runDemo()">Run DOM Demo</button>
+
+    <h2>Table Example</h2>
+    <table id="myTable">
+        <tr><td>Row1 Col1</td><td>Row1 Col2</td></tr>
+        <tr><td>Row2 Col1</td><td>Row2 Col2</td></tr>
+    </table>
+
+    <script>
+        function runDemo() {
+
+            console.clear();
+
+            console.log("===== BASIC SELECTION =====");
+
+            // getElementById
+            let title = document.getElementById("main-title");
+            console.log("getElementById:", title);
+
+            // getElementsByTagName
+            let paragraphs = document.getElementsByTagName("p");
+            console.log("getElementsByTagName:", paragraphs);
+
+            // getElementsByClassName
+            let classItems = document.getElementsByClassName("child");
+            console.log("getElementsByClassName:", classItems);
+
+            // getElementsByName
+            let nameItems = document.getElementsByName("special");
+            console.log("getElementsByName:", nameItems);
+
+            // querySelector
+            let firstP = document.querySelector(".child");
+            console.log("querySelector:", firstP);
+
+            // querySelectorAll
+            let allP = document.querySelectorAll(".child");
+            console.log("querySelectorAll:", allP);
+
+
+            console.log("===== NODE TYPES =====");
+
+            let parent = document.getElementById("parentBox");
+
+            console.log("childNodes (includes text & comments):", parent.childNodes);
+            console.log("children (elements only):", parent.children);
+
+            console.log("firstChild:", parent.firstChild);
+            console.log("lastChild:", parent.lastChild);
+
+            console.log("firstElementChild:", parent.firstElementChild);
+            console.log("lastElementChild:", parent.lastElementChild);
+
+
+            console.log("===== SIBLINGS & PARENTS =====");
+
+            let child1 = parent.children[0];
+
+            console.log("Parent:", child1.parentNode);
+            console.log("Next sibling:", child1.nextSibling);
+            console.log("Next element sibling:", child1.nextElementSibling);
+            console.log("Previous element sibling:", child1.previousElementSibling);
+
+
+            console.log("===== ELEMENT ONLY NAVIGATION =====");
+
+            console.log("Parent Element:", child1.parentElement);
+            console.log("Children Elements:", parent.children);
+
+
+            console.log("===== TABLE LINKS =====");
+
+            let table = document.getElementById("myTable");
+
+            console.log("Rows:", table.rows);
+            console.log("First row cells:", table.rows[0].cells);
+
+
+            console.log("===== SEARCHING DOM =====");
+
+            let found = document.querySelectorAll("p.child");
+            found.forEach(el => el.classList.add("highlight"));
+
+
+            console.log("===== MATCHES, CLOSEST, CONTAINS =====");
+
+            let el = document.querySelector(".child");
+
+            console.log("matches('.child'):", el.matches(".child"));
+
+            console.log("closest('.box'):", el.closest(".box"));
+
+            console.log("parent contains child:", parent.contains(el));
+
+
+            console.log("===== AUTO CORRECTION =====");
+
+            // Browser auto-corrects HTML structure
+            let newDiv = document.createElement("div");
+            newDiv.innerHTML = "<p>Paragraph inside div</p>";
+
+            console.log("Auto corrected structure:", newDiv);
+
+
+            console.log("===== DONE =====");
+        }
+    </script>
+
+</body>
+</html>
