@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practice set 6</title>
+</head>
+
+<body>
+    q.1] Write a program using prompt function to take input of age as a value from the user
+    and use alert to tell him if he can drive!
+    <script>
+        let age = prompt("Enter your age :")
+        if (age >= 18){
+            alert("You are eligible to drive.")
+        }
+        else{
+            alert("You are not eligible to drive.")
+        }
+    </script>
+
+   q.2] In q.1 use confirm to ask the user if he wants to see the prompt again. 
+    <script>
+        let age1 = prompt("Enter your age:")
+        if (age1 >= 18){
+            alert("You are eligible to drive.")
+        }
+        else{
+            alert("You are not eligible to drive.")
+        }
+        let confirmAgain = confirm("Do you want to enter your age again?")
+        if (confirmAgain) {
+            let age2 = prompt("Enter your age:")
+            if (age2 >= 18){
+                alert("You are eligible to drive.")
+            }
+            else{
+                alert("You are not eligible to drive.")
+            }
+        }
+    </script>
+
+   q.3] In previous question use console.error to log error if the age entered is negative.
+   <script>
+    let age2 = prompt("Enter your age:")
+    if (age2 <0){
+        console.error("Error: Age is invalid!!!")  
+    }
+   </script>
+
+  q.4] write a program to change the url to google.com(redirection) if user enters a number grater than 4.
+  <script>
+    let num = prompt("Enter a number:")
+    if (num > 4){
+        window.location.href = "https://www.google.com"
+    }
+  </script> 
+
+  q.5] change the background of the age to yellow , red , green or any other color based on users 
+  input through prompt.
+  <script>
+    let color = prompt("Enter a color (blue, red, green, yellow):")
+    document.body.style.backgroundColor = color;
+  </script>
+
+</body>
+
+</html>
